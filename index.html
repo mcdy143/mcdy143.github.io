@@ -1,1 +1,88 @@
-Hello World
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>UberVis</title>
+  <script src="lib/d3.js"></script>
+  <script src="js/price.js"></script>
+  <style>
+    path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+    }
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    .overlay {
+    fill: none;
+    pointer-events: all;
+    }
+    .focus circle {
+    fill: none;
+    stroke: steelblue;
+    }
+    .brush .extent {
+    stroke: #fff;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+    }
+    .bar {
+    fill: steelblue;
+
+
+
+    .area {
+    stroke-width: 0;
+    fill: lightsteelblue;
+    }
+    
+    .median-line,
+    .legend .median-line {
+    fill: none;
+    stroke: 'black';
+    stroke-width: 3;
+    }
+    
+    .legend .legend-bg {
+    fill: rgba(0, 0, 0, 0.5);
+    stroke: rgba(0, 0, 0, 0.5);
+    }
+
+    .legend text,
+    .marker text {
+    fill: #fff;
+    font-weight: bold;
+    }
+    
+    .marker text {
+    text-anchor: middle;
+    }
+    }
+  </style>
+</head>
+<body onload="init()"> <!-- init() method defined in timeline.js-->
+
+<div style="margin:30;">
+  <div style="display: table-cell; width: 120;">
+    <label for="xdropdown">X: </label><select id="xdropdown">
+      <option val="timestamp">time</option>
+    </select>
+  </div>
+  <div style="display: table-cell; width: 190;">
+    <label for="ydropdown">Y: </label><select id="ydropdown">
+      <option val="surge_multiplier">surge multiplier</option>
+      <option val="estimated_waiting_time">estimated waiting time</option>
+    </select>
+  </div>
+  <div style="display: table-cell; width: 150;">
+    <button id="update" onclick="updateClicked()">Update</button>
+  </div>
+</div>
+
+<div id="vis"></div>
+
+</body>
+</html>
