@@ -87,8 +87,8 @@ var div = d3.select("body")
 
 // Load in my states data!
 d3.csv("data/healthQuality.csv", function(data) {
-color.domain([0,1,2,3]); // setting the range of the input data
-
+//color.domain([0,1,2,3]); // setting the range of the input data
+color.domain([d3.min(data.poorHealthPerc), d3.max(data.poorHealthPerc)])
 // Load GeoJSON data and merge with states data
 d3.json("data/us-states.json", function(json) {
 
