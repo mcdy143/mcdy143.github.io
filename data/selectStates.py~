@@ -1,4 +1,0 @@
-import pandas as pd
-
-df = pd.read_csv('healthQuality.csv')
-fState = df.loc[df1['County']=='']
